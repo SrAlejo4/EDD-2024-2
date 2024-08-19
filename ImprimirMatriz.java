@@ -1,4 +1,5 @@
 public class ImprimirMatriz {
+    
     // Método para imprimir la matriz ...
     public void imprimirMatriz(int[][] matriz){
         for(int i = 0; i < matriz.length; i++){
