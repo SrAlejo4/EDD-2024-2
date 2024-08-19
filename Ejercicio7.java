@@ -2,8 +2,8 @@
 public class Ejercicio7 {
 
     public void positivosNegativos(){
-        RandomMatriz randomM = new RandomMatriz();
-        ImprimirMatriz imprimirM = new ImprimirMatriz();
+        RandomMatriz randomM = new RandomMatriz(); // Creamos una instancia de la clase RandomMatriz ...
+        ImprimirMatriz imprimirM = new ImprimirMatriz(); // Creamos una instancia de la clase ImprimirMatriz ...
 
         int filas = 5;
         int columnas = 6;
