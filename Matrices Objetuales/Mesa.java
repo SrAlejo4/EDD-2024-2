@@ -4,18 +4,17 @@ public class Mesa {
     private String marca, modelo;
     private int precio;
 
-    // public Mesa() {
-    //     marca = "";
-    //     modelo = "";
-    //     precio = 0;
-    // }
+    public Mesa() {
+        marca = "";
+        modelo = "";
+        precio = 0;
+    }
 
-    // public Mesa(String Marca, String Modelo, int Precio) {
-    //     this.marca = Marca;
-    //     this.modelo = Modelo;
-    //     this.precio = Precio;
-
-    // }
+    public Mesa(String Marca, String Modelo, int Precio) {
+        this.marca = Marca;
+        this.modelo = Modelo;
+        this.precio = Precio;
+    }
 
     public String getMarca() {
         return marca;
@@ -40,6 +39,4 @@ public class Mesa {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-  
-
 }
