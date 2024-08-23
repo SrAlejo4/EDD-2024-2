@@ -1,17 +1,10 @@
 public class Vehiculo {
     private String vehiculo, marca, color;
-    private int modelo,  precio;
+    private int modelo;
+    private double precio;
 
     public Vehiculo() {
         super();
-    }
-
-    public Vehiculo(String vehiculo, String marca, String color, int modelo, int precio){
-        this.vehiculo = vehiculo;
-        this.marca = marca;
-        this.color = color;
-        this.modelo = modelo;
-        this.precio = precio;
     }
 
     public String getVehiculo() {
@@ -46,11 +39,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 }

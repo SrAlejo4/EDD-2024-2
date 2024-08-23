@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class MainVehiculo {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        Vehiculo vehiculo = new Vehiculo();
 
         // Variable de entrada de datos ...
         String tipoV = "", marca = "", color = "";
-        int modelo = 0, precio = 0;
+        int modelo = 0;
+        double precio = 0, precioD = 0;
 
         System.out.print("\nIngrese el tamaño de la matriz: ");
         int tam = entrada.nextInt();
@@ -17,7 +17,7 @@ public class MainVehiculo {
         for(int i = 0; i < tam; i++){
             for(int j = 0; j < tam; j++){
                 Vehiculo datos = new Vehiculo();
-                System.out.print("Ingrese el tipo de vehiculo: ");
+                System.out.print("\nIngrese el tipo de vehiculo: ");
                 tipoV = entrada.next();
                 datos.setVehiculo(tipoV);
 
@@ -33,24 +33,54 @@ public class MainVehiculo {
                 modelo = entrada.nextInt();
                 datos.setModelo(modelo);
 
-                System.out.println("Ingrese el precio del vehiculo: ");
-                precio = entrada.nextInt();
+                System.out.print("Ingrese el precio del vehiculo: ");
+                precio = entrada.nextDouble();
                 datos.setPrecio(precio);
 
                 matrizVehiculos[i][j] = datos;
             }
         }
 
-        // For para imprimir la matriz ...
+        // For para imprimir la matriz ingresada...
+        System.out.println("\n ------ MATRIZ INGRESADA ------ \n");
         for(int i = 0; i < tam; i++){
             for(int j = 0; j < tam; j++){
-                System.out.print(" " + matrizVehiculos[i][j].getVehiculo() + " ");
-                System.out.print(" " + matrizVehiculos[i][j].getMarca() + " ");
-                System.out.print(" " + matrizVehiculos[i][j].getColor() + " ");
-                System.out.print(" " + matrizVehiculos[i][j].getModelo() + " ");
-                System.out.print(" " + matrizVehiculos[i][j].getPrecio() + " ");
+                System.out.print(" " + matrizVehiculos[i][j].getVehiculo());
+                System.out.print(" " + matrizVehiculos[i][j].getMarca());
+                System.out.print(" " + matrizVehiculos[i][j].getColor());
+                System.out.print(" " + matrizVehiculos[i][j].getModelo());
+                System.out.print(" " + matrizVehiculos[i][j].getPrecio() + "   ");
             }
-            System.out.println("");
+            System.out.println("\n");
+        }
+
+        // For para determinar los porcentajes de aumento o descuento ...
+        for(int i = 0; i < tam; i++){
+            for(int j = 0; j < tam; j++){
+                if(matrizVehiculos[i][j].getModelo() >= 2000 && matrizVehiculos[i][j].getModelo() <= 2015){
+                    precioD = matrizVehiculos[i][j].getPrecio();
+                    precioD *= 0.85;
+                    matrizVehiculos[i][j].setPrecio(precioD);
+                }
+                else if(matrizVehiculos[i][j].getModelo() > 2015){
+                    precioD = matrizVehiculos[i][j].getPrecio();
+                    precioD *= 1.15;
+                    matrizVehiculos[i][j].setPrecio(precioD);
+                }
+            }
+        }
+
+        // For para imprimir la matriz ACTUALIZADA...
+        System.out.println("\n ------ MATRIZ CON DESCUENTOS O AUMENTOS ------ \n");
+        for(int i = 0; i < tam; i++){
+            for(int j = 0; j < tam; j++){
+                System.out.print(" " + matrizVehiculos[i][j].getVehiculo());
+                System.out.print(" " + matrizVehiculos[i][j].getMarca());
+                System.out.print(" " + matrizVehiculos[i][j].getColor());
+                System.out.print(" " + matrizVehiculos[i][j].getModelo());
+                System.out.print(" " + matrizVehiculos[i][j].getPrecio() + "   ");
+            }
+            System.out.println("\n");
         }
     }
 }
