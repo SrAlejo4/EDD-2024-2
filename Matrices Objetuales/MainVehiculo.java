@@ -11,7 +11,7 @@ public class MainVehiculo {
 
         Mo = prueba.llenarMatrizVehiculos(tam);
         /* El método llenarMatrizVehiculos retorna una matriz objetual de tipo Vehiculo la cual está siendo almacenada
-        en el objeto Mo que es de tipo matriz Vehiculo ... 
+        en la matriz Mo que es de tipo matriz Vehiculo ... 
         El objeto "prueba" es meramente un objeto de la clase Vehiculo para ejecutar métodos ... */
         prueba.mostrarMatriz(Mo);
     }

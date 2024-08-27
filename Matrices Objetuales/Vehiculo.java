@@ -79,7 +79,7 @@ public class Vehiculo {
     public double precioFinal(int modelo, double precioOg){
         double precioF = 0;
         if(modelo >= 2000 && modelo <= 2015){
-            precioF = precioOg *0.85;
+            precioF = precioOg * 0.85;
         }
         else if(modelo > 2015){
             precioF = precioOg * 1.15;
