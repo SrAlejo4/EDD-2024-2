@@ -94,8 +94,9 @@ public class Producto {
                 }
             }
         }
-
+        System.out.println("\n --------- Matriz IDENTICOS ---------");
         mostrarMatrizTienda(matrizIdenticos);
+        System.out.println("\n --------- Matriz DIFERENTES --------- ");
         mostrarMatrizTienda(matrizDiferentes);
     }
 
