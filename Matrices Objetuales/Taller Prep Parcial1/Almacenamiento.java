@@ -78,7 +78,23 @@ public class Almacenamiento {
         Almacenamiento[] vectorB = new Almacenamiento[cantB];
         Almacenamiento[] vectorC = new Almacenamiento[cantC];
 
+        // Contadores para las posiciones de los vectores ...
+        int indexA = 0, indexB = 0, indexC = 0;
+
         // For que recorre la matriz para llenar los vectores ...
+        for (int i = 0; i < matrizAlm.length; i++) {
+            for (int j = 0; j < matrizAlm.length; j++) {
+                if(matrizAlm[i][j].getCategoria() == 'A'){
+                    vectorA[indexA++] = matrizAlm[i][j];
+                }
+                else if(matrizAlm[i][j].getCategoria() == 'B'){
+                    vectorB[indexB++] = matrizAlm[i][j];
+                }
+                else if(matrizAlm[i][j].getCategoria() == 'C'){
+                    vectorC[indexC++] = matrizAlm[i][j];
+                }     
+            }
+        }
 
         Almacenamiento [][] matrizFiltrada = {
             vectorA, vectorB, vectorC
@@ -111,6 +127,6 @@ public class Almacenamiento {
         Almacenamiento[][] matrizAlmacen = new Almacenamiento[dim][dim];
         
         matrizAlmacen = bodega.llenarMatrizAlmacenamiento(dim);
-        bodega.filtrarEstanterias(matrizAlmacen, dim);
+        bodega.filtrarEstanterias(matrizAlmacen);
     }
 }
