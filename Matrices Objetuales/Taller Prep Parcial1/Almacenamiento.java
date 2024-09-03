@@ -54,27 +54,31 @@ public class Almacenamiento {
     }
 
     // Método para filtrar por categoria y asignar en vectores ...
-    public void filtrarEstanterias(Almacenamiento[][] matrizAlm, int dim){
-        Almacenamiento[] vectorA = new Almacenamiento[dim];
-        Almacenamiento[] vectorB = new Almacenamiento[dim];
-        Almacenamiento[] vectorC = new Almacenamiento[dim];
+    public void filtrarEstanterias(Almacenamiento[][] matrizAlm){
+        // Creamos variables para almacenar la cantidad de elementos en las categorías ...
+        int cantA = 0, cantB = 0, cantC = 0;
 
+        // For para determinar el tamaño de los vectores (Se determinará a partir de la cantidad de elementos por categoría ...)
         for (int i = 0; i < matrizAlm.length; i++) {
             for (int j = 0; j < matrizAlm.length; j++) {
-                if(matrizAlm[i][j].getCategoria() == 'A'){ // Los datos de tipo char se escriben en COMILLAS SIMPLES ''
-                    vectorA[j] = matrizAlm[i][j];
+                if(matrizAlm[i][j].getCategoria() == 'A'){
+                    cantA++;
                 }
                 else if(matrizAlm[i][j].getCategoria() == 'B'){
-                    vectorB[j] = matrizAlm[i][j];
+                    cantB++;
                 }
                 else if(matrizAlm[i][j].getCategoria() == 'C'){
-                    vectorC[j] = matrizAlm[i][j];
-                }
-                else{
-                    System.out.println("CATEGORIA INGRESADA NO VÁLIDA .... ");
-                }
+                    cantC++;
+                }     
             }
         }
+        
+        // Creamos los vectores con sus respectivos tamaños ...
+        Almacenamiento[] vectorA = new Almacenamiento[cantA];
+        Almacenamiento[] vectorB = new Almacenamiento[cantB];
+        Almacenamiento[] vectorC = new Almacenamiento[cantC];
+
+        // For que recorre la matriz para llenar los vectores ...
 
         Almacenamiento [][] matrizFiltrada = {
             vectorA, vectorB, vectorC
