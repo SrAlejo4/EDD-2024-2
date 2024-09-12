@@ -60,6 +60,5 @@ public class ListaDoble {
             System.out.println("LISTA VACÍA ...");
         }
     }
-
-
 }
+
