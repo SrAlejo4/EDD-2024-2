@@ -31,6 +31,9 @@ public class ComputadorPortatil {
 
     // Getters y Setters
     public String getSerial() { return serial; }
+    public String getMarca() {return marca; }
+    public float getTamano() {return tamano; }
+    public float getPrecio() {return precio; }
     public boolean isPrestado() { return prestado; } // Getter de Prestado
     public void setPrestado(boolean prestado) { this.prestado = prestado; }
 }

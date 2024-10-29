@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class SubMenu {
     Inventario inventario = new Inventario();
+    ExportarListas exportar = new ExportarListas();
     Scanner sc = new Scanner(System.in);
     int opcion;
 
@@ -254,5 +255,35 @@ public class SubMenu {
                     System.out.println("Opción inválida.");
             }
         } while (opcion != 5);
+    }
+
+    public void menuExportarArchivos(Inventario inventario){
+        do {
+            System.out.println("=== EXPORTAR ARCHIVOS DE LISTAS ===");
+            System.out.println("1. Exportar lista Estudiantes de Ingeniería");
+            System.out.println("2. Exportar lista Estudiantes de Diseño");
+            System.out.println("3. Exportar lista Computadores Portátiles");
+            System.out.println("4. Exportar lista Tabletas gráficas");
+            System.out.println("5. Volver al menú principal");
+            opcion = inventario.leerOpcion(sc);
+
+            switch (inventario) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    exportar.exportarComputadores(inventario.getComputadoresPortatiles());
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    System.out.println("Volviendo al menú principal...");
+                    break;
+                default:
+                    break;
+            }
+        }
+        while (opcion != 5);
     }
 }
