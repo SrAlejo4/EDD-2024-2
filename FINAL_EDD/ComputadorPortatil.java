@@ -16,6 +16,15 @@ public class ComputadorPortatil {
         this.prestado = false;  // Por defecto, no está prestado
     }
 
+    // Constructor para Importar lista como un archivo
+    public ComputadorPortatil(String serial, String marca, float tamano, float precio, boolean prestado){
+        this.serial = serial;
+        this.marca = marca;
+        this.tamano = tamano;
+        this.precio = precio;
+        this.prestado = prestado;
+    }
+
     private String validarCadena(String input, String campo) {
         while (!input.matches("[a-zA-Z]+")) {
             System.out.println(campo + " inválido. Intente nuevamente:");

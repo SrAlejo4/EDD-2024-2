@@ -13,6 +13,12 @@ public class Inventario {
     public ArrayList<ComputadorPortatil> getComputadoresPortatiles() {return computadores; }
     public ArrayList<TabletaGrafica> getTabletaGraficas() {return tabletas; }
 
+    
+
+    public void setComputadores(ArrayList<ComputadorPortatil> computadores) {
+        this.computadores = computadores;
+    }
+    
     // Registrar préstamo para estudiantes de Ingeniería
     public void registrarPrestamoIngenieria(String cedula, String serialEquipo) {
         for (EstudianteIngenieria estudiante : estudiantesIngenieria) {

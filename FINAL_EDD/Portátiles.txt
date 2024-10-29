@@ -1,0 +1,18 @@
+Serial: ING001
+Marca: HP
+Tamaño: 14.0
+Precio: 4500000.0
+Prestado: false
+---------------------------------------
+Serial: ING002
+Marca: Dell
+Tamaño: 16.0
+Precio: 4.5E7
+Prestado: false
+---------------------------------------
+Serial: ING003
+Marca: Lenovo
+Tamaño: 16.0
+Precio: 7850000.0
+Prestado: false
+---------------------------------------

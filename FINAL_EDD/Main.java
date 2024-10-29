@@ -7,6 +7,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int opcion;
 
+        ImportarListas importarArchivos = new ImportarListas();
+        importarArchivos.importarListas();
+
         do {
             System.out.println("==== MENÚ PRINCIPAL ====");
             System.out.println("1. Agregar Estudiantes y Equipos");
