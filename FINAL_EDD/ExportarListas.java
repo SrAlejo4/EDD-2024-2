@@ -14,7 +14,7 @@ public class ExportarListas {
                     escriba.write("Marca: " + com.getMarca() + "\n");
                     escriba.write("Tamaño: " + com.getTamano() + "\n");
                     escriba.write("Precio: " + com.getPrecio() + "\n");
-                    escriba.write("Prestado: " + com.isPrestado() + "\n")
+                    escriba.write("Prestado: " + com.isPrestado() + "\n");
                     escriba.write("---------------------------------------\n");
                 }
                 System.out.println("Archivo exportado correctamente");

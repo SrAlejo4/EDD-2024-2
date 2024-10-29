@@ -8,10 +8,10 @@ public class Inventario {
     private ArrayList<TabletaGrafica> tabletas = new ArrayList<>();
 
     // Getters de las listas
-    public ArrayList<EstudianteIngenieria> getEstudiantesIngenieria() {return estudiantesIngenieria};
-    public ArrayList<EstudianteDiseno> getEstudiantesDiseno() {return estudiantesDiseno};
-    public ArrayList<ComputadorPortatil> getComputadoresPortatiles() {return computadores};
-    public ArrayList<TabletaGrafica> getTabletaGraficas() {return tabletas};
+    public ArrayList<EstudianteIngenieria> getEstudiantesIngenieria() {return estudiantesIngenieria; }
+    public ArrayList<EstudianteDiseno> getEstudiantesDiseno() {return estudiantesDiseno; }
+    public ArrayList<ComputadorPortatil> getComputadoresPortatiles() {return computadores; }
+    public ArrayList<TabletaGrafica> getTabletaGraficas() {return tabletas; }
 
     // Registrar préstamo para estudiantes de Ingeniería
     public void registrarPrestamoIngenieria(String cedula, String serialEquipo) {

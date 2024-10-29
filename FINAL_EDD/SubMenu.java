@@ -267,20 +267,25 @@ public class SubMenu {
             System.out.println("5. Volver al menú principal");
             opcion = inventario.leerOpcion(sc);
 
-            switch (inventario) {
+            switch (opcion) {
                 case 1:
+                    System.out.println("Archivo exportado con éxito.");
                     break;
                 case 2:
+                    System.out.println("Archivo exportado con éxito.");
                     break;
                 case 3:
+                    System.out.println("Archivo exportado con éxito.");
                     exportar.exportarComputadores(inventario.getComputadoresPortatiles());
                     break;
                 case 4:
+                    System.out.println("Archivo exportado con éxito.");
                     break;
                 case 5:
                     System.out.println("Volviendo al menú principal...");
                     break;
                 default:
+                    System.out.println("Opción inválida.");
                     break;
             }
         }
