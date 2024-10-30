@@ -16,3 +16,9 @@ Tamaño: 16.0
 Precio: 7850000.0
 Prestado: false
 ---------------------------------------
+Serial: ING001
+Marca: Dell
+Tamaño: 16.0
+Precio: 78000.0
+Prestado: false
+---------------------------------------

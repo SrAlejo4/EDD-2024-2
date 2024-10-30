@@ -61,12 +61,6 @@ public class ImportarListas {
         return listaPortatiles;
     }    
 
-    // Método que llama a todos los métodos de importarListas e importa todas las listas al mismo tiempo ...
-    public void importarListas(){
-        ArrayList<ComputadorPortatil> listaPortatiles = inventario.getComputadoresPortatiles();
-        listaPortatiles = importarPortatiles(listaPortatiles);           
-    }
-
 }
             
         

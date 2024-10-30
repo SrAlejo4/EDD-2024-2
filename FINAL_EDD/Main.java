@@ -8,7 +8,7 @@ public class Main {
         int opcion;
 
         ImportarListas importarArchivos = new ImportarListas();
-        importarArchivos.importarListas();
+        inventario.setComputadores(importarArchivos.importarPortatiles(inventario.getComputadoresPortatiles()));
 
         do {
             System.out.println("==== MENÚ PRINCIPAL ====");
