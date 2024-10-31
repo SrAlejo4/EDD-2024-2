@@ -258,9 +258,7 @@ public class SubMenu {
                     inventario.mostrarPortatiles(); // Mostrar portátiles antes de modificar
                     System.out.println("Ingrese cédula o serial del equipo a modificar:");
                     String identificador = sc.next();
-                    System.out.println("Ingrese nuevo serial del equipo:");
-                    String nuevoSerial = sc.next();
-                    inventario.modificarPrestamoPorSerial(identificador, nuevoSerial);
+                    inventario.modificarPrestamo(identificador);
                     break;
 
                 case 3:
@@ -314,9 +312,7 @@ public class SubMenu {
                     inventario.mostrarTablet(); // Mostrar tabletas antes de modificar
                     System.out.println("Ingrese cédula o serial del equipo a modificar:");
                     String identificador = sc.next();
-                    System.out.println("Ingrese nuevo serial del equipo:");
-                    String nuevoSerial = sc.next();
-                    inventario.modificarPrestamoPorSerial(identificador, nuevoSerial);
+                    inventario.modificarPrestamo(identificador);
                     break;
 
                 case 3:

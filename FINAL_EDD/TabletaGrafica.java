@@ -37,6 +37,7 @@ public class TabletaGrafica {
     public String getSerial() { return serial; }
     public boolean isPrestado() { return prestado; }
     public void setPrestado(boolean prestado) { this.prestado = prestado; }
+    public void setSerial(String serial) {this.serial = serial; }
 }
 
 

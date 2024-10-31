@@ -67,41 +67,107 @@ public class Inventario {
         System.out.println("Estudiante no encontrado o ya tiene equipo prestado.");
     }
 
-    // Modificar préstamo por cédula (sobrecarga)
-    public void modificarPrestamo(String cedula, String nuevoSerial) {
-        for (EstudianteIngenieria estudiante : estudiantesIngenieria) {
-            if (estudiante.getCedula().equals(cedula)) {
-                devolverEquipo(estudiante.getSerial()); // Devuelve el equipo actual
-                registrarPrestamoIngenieria(cedula, nuevoSerial); // Registra el nuevo préstamo
-                return;
-            }
+    public void modificarPrestamo(String identificador) {
+        Scanner sc = new Scanner(System.in);
+        Persona estudiante = buscarEstudiantePorIdentificador(identificador);
+
+        if (estudiante == null) {
+            System.out.println("Estudiante no encontrado.");
+            return;
         }
-        for (EstudianteDiseno estudiante : estudiantesDiseno) {
-            if (estudiante.getCedula().equals(cedula)) {
-                devolverEquipo(estudiante.getSerial());
-                registrarPrestamoDiseno(cedula, nuevoSerial);
-                return;
-            }
+
+        if (!estudiante.getSerial().isEmpty()) {
+            liberarEquipo(estudiante.getSerial());
         }
-        System.out.println("Estudiante no encontrado.");
+
+        System.out.println("Seleccione el nuevo equipo para el préstamo:");
+        if (estudiante instanceof EstudianteIngenieria) {
+            mostrarPortatilesDisponibles();
+            System.out.println("Ingrese el serial del nuevo portátil:");
+        } else if (estudiante instanceof EstudianteDiseno) {
+            mostrarTabletasDisponibles();
+            System.out.println("Ingrese el serial de la nueva tableta:");
+        }
+
+        String nuevoSerial = sc.nextLine();
+
+        if (asignarNuevoEquipo(estudiante, nuevoSerial)) {
+            System.out.println("El préstamo de equipo ha sido modificado exitosamente.");
+        } else {
+            System.out.println("No se pudo modificar el préstamo. Verifique que el equipo esté disponible.");
+        }
     }
 
-    // Modificar préstamo por serial (sobrecarga)
-    public void modificarPrestamoPorSerial(String serialActual, String nuevoSerial) {
+    private boolean asignarNuevoEquipo(Persona estudiante, String nuevoSerial) {
+        // Para estudiantes de Ingeniería
+        for (ComputadorPortatil portatil : computadores) {
+            if (portatil.getSerial().equals(estudiante.getSerial()) && !portatil.isPrestado()) {
+                estudiante.setSerial(nuevoSerial);  // Actualiza el serial en el estudiante
+                portatil.setSerial(nuevoSerial);
+                portatil.setPrestado(true);         // Marca el equipo como prestado
+                return true;
+            }
+        }
+
+        // Para estudiantes de Diseño
+        for (TabletaGrafica tableta : tabletas) {
+            if (tableta.getSerial().equals(estudiante.getSerial()) && !tableta.isPrestado()) {
+                estudiante.setSerial(nuevoSerial);  // Actualiza el serial en el estudiante
+                tableta.setSerial(nuevoSerial);
+                tableta.setPrestado(true);          // Marca el equipo como prestado
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void liberarEquipo(String serial) {
+        for (ComputadorPortatil portatil : computadores) {
+            if (portatil.getSerial().equals(serial)) {
+                portatil.setPrestado(false);
+                break;
+            }
+        }
+        for (TabletaGrafica tableta : tabletas) {
+            if (tableta.getSerial().equals(serial)) {
+                tableta.setPrestado(false);
+                break;
+            }
+        }
+    }
+
+    private void mostrarPortatilesDisponibles() {
+        System.out.println("Portátiles disponibles:");
+        for (ComputadorPortatil portatil : computadores) {
+            if (!portatil.isPrestado()) {
+                System.out.println("Serial: " + portatil.getSerial());
+            }
+        }
+    }
+
+    private void mostrarTabletasDisponibles() {
+        System.out.println("Tabletas disponibles:");
+        for (TabletaGrafica tableta : tabletas) {
+            if (!tableta.isPrestado()) {
+                System.out.println("Serial: " + tableta.getSerial());
+            }
+        }
+    }
+
+    private Persona buscarEstudiantePorIdentificador(String identificador) {
         for (EstudianteIngenieria estudiante : estudiantesIngenieria) {
-            if (estudiante.getSerial().equals(serialActual)) {
-                modificarPrestamo(estudiante.getCedula(), nuevoSerial);
-                return;
+            if (estudiante.getCedula().equals(identificador) || estudiante.getSerial().equals(identificador)) {
+                return estudiante;
             }
         }
         for (EstudianteDiseno estudiante : estudiantesDiseno) {
-            if (estudiante.getSerial().equals(serialActual)) {
-                modificarPrestamo(estudiante.getCedula(), nuevoSerial);
-                return;
+            if (estudiante.getCedula().equals(identificador) || estudiante.getSerial().equals(identificador)) {
+                return estudiante;
             }
         }
-        System.out.println("No se encontró el equipo prestado con ese serial.");
+        return null;
     }
+
 
     // Devolución de equipo
     public void devolverEquipo(String serial) {

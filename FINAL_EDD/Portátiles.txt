@@ -1,8 +1,16 @@
 Serial: ING001
-Marca: Dell
+Marca: HP
 Tamaño: 16.0
 Sistema operativo: Windows 11
 Procesador: Intel® Core™ i5
+Precio: 2500000.0
+Prestado: false
+---------------------------------------
+Serial: ING001
+Marca: HP
+Tamaño: 16.0
+Sistema operativo: Windows 11
+Procesador: AMD Ryzen
 Precio: 2500000.0
 Prestado: false
 ---------------------------------------

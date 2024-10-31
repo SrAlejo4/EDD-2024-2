@@ -60,5 +60,6 @@ public class ComputadorPortatil {
     public boolean isPrestado() { return prestado; } // Getter de Prestado
 
     public void setPrestado(boolean prestado) { this.prestado = prestado; } // Setter de prestado
+    public void setSerial (String serial) {this.serial = serial; }
 }
 
