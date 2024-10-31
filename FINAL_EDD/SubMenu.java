@@ -30,6 +30,7 @@ public class SubMenu {
                     String telefonoIng = sc.next();
                     System.out.println("Ingrese el semestre actual del estudiante:");
                     int semestre = sc.nextInt();
+                    System.out.println("Ingrese el promedio del estudiante:");
                     float promedio = inventario.leerDecimalConComa(sc);
 
                     EstudianteIngenieria estudianteIng = new EstudianteIngenieria(cedulaIng, nombreIng, apellidoIng,
@@ -152,8 +153,48 @@ public class SubMenu {
                     break;
 
                 case 4:
-                    System.out.println("Ingrese la marca de la tableta:");
-                    String marcaTableta = sc.next();
+                    // Agregar tableta gráfica
+                    String marcaTableta = "";
+                    do {
+                        System.out.println("Seleccione la marca de la tableta:");
+                        System.out.println("1. Samsung");
+                        System.out.println("2. Lenovo");
+                        opcion = inventario.leerOpcion(sc);
+                        switch (opcion) {
+                            case 1:
+                                marcaTableta = "Samsung";
+                                break;
+                            case 2:
+                                marcaTableta = "Lenovo";
+                                break;
+                            default:
+                                System.out.println("Opción inválida. Intente de nuevo.");
+                        }
+                    } while (opcion != 1 && opcion != 2);
+
+                    String almacenamiento = "";
+                    do{
+                        System.out.println("Seleccione el almacenamiento de la tableta: ");
+                        System.out.println("1. 256 GB");
+                        System.out.println("2. 512 GB");
+                        System.out.println("3. 1 TB");
+                        opcion = inventario.leerOpcion(sc);
+                        switch (opcion) {
+                            case 1:
+                                almacenamiento = "256 GB";
+                                break;
+                            case 2:
+                                almacenamiento = "512 GB";
+                                break;
+                            case 3:
+                                almacenamiento = "1 TB";
+                                break;
+                            default:
+                                System.out.println("Opción inválida. Intente de nuevo.");
+                                break;
+                        }
+                    }while (opcion < 1 || opcion > 3);
+
                     tamano = 0;
                     do {
                         System.out.println("Seleccione el tamaño de la tableta:");
@@ -171,10 +212,14 @@ public class SubMenu {
                                 System.out.println("Opción inválida. Intente de nuevo.");
                         }
                     } while (opcion != 1 && opcion != 2);
+
+                    System.out.println("Ingrese el peso de la tableta en kg:");
+                    float pesoTableta = inventario.leerDecimalConComa(sc);
+                    
                     System.out.println("Ingrese el precio de la tableta:");
                     float precioTableta = sc.nextFloat();
 
-                    TabletaGrafica tableta = new TabletaGrafica(marcaTableta, tamano, precioTableta);
+                    TabletaGrafica tableta = new TabletaGrafica(marcaTableta, almacenamiento, tamano, pesoTableta, precioTableta);
                     inventario.agregarTableta(tableta);
                     break;
 

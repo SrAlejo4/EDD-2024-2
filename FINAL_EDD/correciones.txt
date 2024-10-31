@@ -1,7 +1,6 @@
-- Agregar opcion de marca en la tableta
-- Al registrar la tableta, agregar Almacenamiento y Peso(en Kg)
 
 - Validaciones:
 Semestre actual en ingeniería
 Cantidad de asignaturas en Diseño
 Precio de la computadora y tableta
+promedio permitido en estudiante ingeniería

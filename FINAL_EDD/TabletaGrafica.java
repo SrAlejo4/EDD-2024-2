@@ -3,15 +3,20 @@ import java.util.Scanner;
 public class TabletaGrafica {
     private String serial;
     private String marca;
+    private String almacenamiento;
     private float tamano;
+    private float peso;
     private float precio;
     private boolean prestado;
     private static int contadorDiseno = 1;
 
-    public TabletaGrafica(String marca, float tamano, float precio) {
+    // Constructor para crear una tableta gráfica por entrada de usuario
+    public TabletaGrafica(String marca, String almacenamiento, float tamano, float peso, float precio) {
         this.serial = generarSerialDiseno();
         this.marca = validarCadena(marca, "Marca");
+        this.almacenamiento = almacenamiento;
         this.tamano = tamano;
+        this.peso = peso;
         this.precio = precio;
         this.prestado = false;  // Por defecto, no está prestado
     }
