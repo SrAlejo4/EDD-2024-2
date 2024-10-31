@@ -28,8 +28,7 @@ public class SubMenu {
                     String apellidoIng = sc.next();
                     System.out.println("Ingrese el teléfono del estudiante:");
                     String telefonoIng = sc.next();
-                    System.out.println("Ingrese el semestre actual del estudiante:");
-                    int semestre = sc.nextInt();
+                    int semestre = inventario.validarSemestre(sc);
                     System.out.println("Ingrese el promedio del estudiante:");
                     float promedio = inventario.leerDecimalConComa(sc);
 
