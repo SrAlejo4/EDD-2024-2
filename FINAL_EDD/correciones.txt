@@ -1,5 +1,0 @@
-- Validaciones:
-Semestre actual en ingeniería
-Cantidad de asignaturas en Diseño
-Precio de la computadora y tableta
-promedio permitido en estudiante ingeniería

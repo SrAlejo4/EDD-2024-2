@@ -243,6 +243,40 @@ public class Inventario {
         return semestre;
     }
 
+    // Método que valida que la cantAsignaturas de estudiante de diseño sea ENTERO ...
+    public int validarAsignaturas(Scanner sc) {
+        int cantAsignaturas = 0;
+        boolean entradaValida = false;
+        
+        while(!entradaValida || cantAsignaturas < 0){
+            try {
+                System.out.println("Ingrese la cantidad de asignaturas: ");
+                cantAsignaturas = Integer.parseInt(sc.next());
+                entradaValida = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada no valida. Ingrese un número entero positivo");
+            }
+        }
+        return cantAsignaturas;
+    }
+
+    // Método para validar el precio ingresado ...
+    public float validarPrecio(Scanner sc){
+        float checkedPrecio = 0;
+        boolean entradaValida = false;
+
+        while(!entradaValida){
+            try{
+                System.out.println("Ingrese el precio: ");
+                checkedPrecio = Float.parseFloat(sc.next());
+                entradaValida = true;
+            }catch (NumberFormatException e){
+                System.out.println("Entrada no valida. Ingrese un número entero positivo");   
+            }
+        }
+
+        return checkedPrecio;
+    }
     // Métodos para agregar estudiantes y equipos
     public void agregarEstudianteIngenieria(EstudianteIngenieria estudiante) {
         estudiantesIngenieria.add(estudiante);

@@ -49,8 +49,7 @@ public class SubMenu {
                     String telefonoDis = sc.next();
                     System.out.println("Ingrese la modalidad de estudio (presencial/virtual):");
                     String modalidad = sc.next();
-                    System.out.println("Ingrese la cantidad de asignaturas:");
-                    int asignaturas = sc.nextInt();
+                    int asignaturas = inventario.validarAsignaturas(sc);
 
                     EstudianteDiseno estudianteDis = new EstudianteDiseno(cedulaDis, nombreDis, apellidoDis,
                             telefonoDis, modalidad, asignaturas);
@@ -144,8 +143,7 @@ public class SubMenu {
                         }
                     } while (opcion != 1 && opcion != 2);
 
-                    System.out.println("Ingrese el precio del portátil:");
-                    float precioPortatil = sc.nextFloat();
+                    float precioPortatil = inventario.validarPrecio(sc);
 
                     ComputadorPortatil portatil = new ComputadorPortatil(marca, tamano, so, procesador, precioPortatil);
                     inventario.agregarComputador(portatil);
@@ -215,8 +213,7 @@ public class SubMenu {
                     System.out.println("Ingrese el peso de la tableta en kg:");
                     float pesoTableta = inventario.leerDecimalConComa(sc);
                     
-                    System.out.println("Ingrese el precio de la tableta:");
-                    float precioTableta = sc.nextFloat();
+                    float precioTableta = inventario.validarPrecio(sc);
 
                     TabletaGrafica tableta = new TabletaGrafica(marcaTableta, almacenamiento, tamano, pesoTableta, precioTableta);
                     inventario.agregarTableta(tableta);

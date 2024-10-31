@@ -4,11 +4,11 @@ public class EstudianteDiseno extends Persona {
     private String modalidadEstudio;
     private int cantidadAsignaturas;
 
-
-    public EstudianteDiseno(String cedula, String nombre, String apellido, String telefono, String modalidadEstudio, int cantidadAsignaturas) {
+    public EstudianteDiseno(String cedula, String nombre, String apellido, String telefono, String modalidadEstudio,
+            int cantidadAsignaturas) {
         super(cedula, nombre, apellido, telefono);
         this.modalidadEstudio = validarModalidad(modalidadEstudio);
-        this.cantidadAsignaturas = validarEntero(cantidadAsignaturas, "Cantidad de Asignaturas");
+        this.cantidadAsignaturas = cantidadAsignaturas;
     }
 
     private String validarModalidad(String modalidad) {
@@ -19,16 +19,12 @@ public class EstudianteDiseno extends Persona {
         return modalidad;
     }
 
-    private int validarEntero(int valor, String campo) {
-        while (valor <= 0) {
-            System.out.println(campo + " inválido. Ingrese un número positivo:");
-            valor = new Scanner(System.in).nextInt();
-        }
-        return valor;
+    // Getters
+    public String getModalidadEstudio() {
+        return modalidadEstudio;
     }
 
-    // Getters
-    public String getModalidadEstudio() { return modalidadEstudio; }
-    public int getCantidadAsignaturas() { return cantidadAsignaturas; }
+    public int getCantidadAsignaturas() {
+        return cantidadAsignaturas;
+    }
 }
-
