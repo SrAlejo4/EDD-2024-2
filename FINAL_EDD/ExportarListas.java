@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ExportarListas {
+    ComputadorPortatil metodosPortatil = new ComputadorPortatil();
 
     public void exportarComputadores(ArrayList<ComputadorPortatil> listaComputadores) {
         if (listaComputadores.isEmpty()) {
@@ -19,7 +20,6 @@ public class ExportarListas {
                     escriba.write("Prestado: " + com.isPrestado() + "\n");
                     escriba.write("---------------------------------------\n");
                 }
-                
             } catch (IOException e) {
                 e.printStackTrace();
             }

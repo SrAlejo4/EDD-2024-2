@@ -1,4 +1,3 @@
-
 - Validaciones:
 Semestre actual en ingeniería
 Cantidad de asignaturas en Diseño

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class ImportarListas {
     // Método para importar archivo de portátiles
     Inventario inventario = new Inventario(); // Instancio objeto de clase Inventario para acceder a las listas ...
+    ComputadorPortatil metodosPortatil = new ComputadorPortatil(); // Instancia para llamar métodos de computador portátil ...
     
     public ArrayList<ComputadorPortatil> importarPortatiles(ArrayList<ComputadorPortatil> listaPortatiles){
         String rutaArchivo = "Portátiles.txt";
@@ -58,6 +59,8 @@ public class ImportarListas {
                 ComputadorPortatil portatil = new ComputadorPortatil(serial, marca, tamano, so, procesador, precio, prestado);
                 listaPortatiles.add(portatil);    
             }
+
+
 
         }catch (IOException e){
             e.printStackTrace();

@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class ComputadorPortatil {
+    Inventario inventario = new Inventario();
+
     private String serial;
     private String marca;
     private float tamano;
@@ -8,7 +10,10 @@ public class ComputadorPortatil {
     private String procesador;
     private float precio;
     private boolean prestado;
-    private static int contadorIngenieria = 1;
+    private int contadorIngenieria = 1;
+
+    // Constructor vacío
+    public ComputadorPortatil(){}
 
     // Constructor para crear pórtatil que se ingrese por entrada de usuario
     public ComputadorPortatil(String marca, float tamano, String so, String procesador, float precio) {
