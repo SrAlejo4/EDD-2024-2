@@ -84,6 +84,7 @@ public class SubMenu {
                                 System.out.println("Opción inválida. Intente de nuevo.");
                         }
                     } while (opcion < 1 || opcion > 4);
+
                     float tamano = 0;
                     do {
                         System.out.println("Seleccione el tamaño del portátil:");
@@ -101,10 +102,52 @@ public class SubMenu {
                                 System.out.println("Opción inválida. Intente de nuevo.");
                         }
                     } while (opcion != 1 && opcion != 2);
+
+                    String so = "";
+                    do{
+                        System.out.println("Seleccione el sistema operativo del portátil: ");
+                        System.out.println("1. Windows 7");
+                        System.out.println("2. Windows 10");
+                        System.out.println("3. Windows 11");
+                        opcion = inventario.leerOpcion(sc);
+                        switch (opcion) {
+                            case 1:
+                                so = "Windows 7";
+                                break;
+                            case 2:
+                                so = "Windows 10";
+                                break;
+                            case 3:
+                                so = "Windows 11";
+                                break;
+                            default:
+                                System.out.println("Opción inválida. Intente de nuevo.");
+                                break;
+                        }
+                    }while (opcion < 1 || opcion > 4);
+
+                    String procesador = "";
+                    do {
+                        System.out.println("Seleccione el procesador del portátil:");
+                        System.out.println("1. AMD Ryzen");
+                        System.out.println("2. Intel® Core™ i5");
+                        opcion = inventario.leerOpcion(sc);
+                        switch (opcion) {
+                            case 1:
+                                procesador = "AMD Ryzen";
+                                break;
+                            case 2:
+                                procesador = "Intel® Core™ i5";
+                                break;
+                            default:
+                                System.out.println("Opción inválida. Intente de nuevo.");
+                        }
+                    } while (opcion != 1 && opcion != 2);
+
                     System.out.println("Ingrese el precio del portátil:");
                     float precioPortatil = sc.nextFloat();
 
-                    ComputadorPortatil portatil = new ComputadorPortatil(marca, tamano, precioPortatil);
+                    ComputadorPortatil portatil = new ComputadorPortatil(marca, tamano, so, procesador, precioPortatil);
                     inventario.agregarComputador(portatil);
                     break;
 

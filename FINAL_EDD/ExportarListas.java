@@ -13,11 +13,13 @@ public class ExportarListas {
                     escriba.write("Serial: " + com.getSerial() + "\n");
                     escriba.write("Marca: " + com.getMarca() + "\n");
                     escriba.write("Tamaño: " + com.getTamano() + "\n");
+                    escriba.write("Sistema operativo: " + com.getSO() + "\n");
+                    escriba.write("Procesador: " + com.getProcesador() + "\n");
                     escriba.write("Precio: " + com.getPrecio() + "\n");
                     escriba.write("Prestado: " + com.isPrestado() + "\n");
                     escriba.write("---------------------------------------\n");
                 }
-                System.out.println("Archivo exportado correctamente");
+                
             } catch (IOException e) {
                 e.printStackTrace();
             }

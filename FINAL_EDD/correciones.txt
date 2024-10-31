@@ -1,6 +1,4 @@
-- Mover métodos de submenus a otra clase
 - Agregar opcion de marca en la tableta
-- Al registrar el computador, agregar SO y Procesador
 - Al registrar la tableta, agregar Almacenamiento y Peso(en Kg)
 
 - Validaciones:

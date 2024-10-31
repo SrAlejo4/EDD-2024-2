@@ -1,24 +1,16 @@
 Serial: ING001
 Marca: HP
-Tamaño: 14.0
-Precio: 4500000.0
+Tamaño: 16.0
+Sistema operativo: Windows 11
+Procesador: Intel® Core™ i5
+Precio: 2500000.0
 Prestado: false
 ---------------------------------------
 Serial: ING002
-Marca: Dell
+Marca: Asus
 Tamaño: 16.0
-Precio: 4.5E7
-Prestado: false
----------------------------------------
-Serial: ING003
-Marca: Lenovo
-Tamaño: 16.0
-Precio: 7850000.0
-Prestado: false
----------------------------------------
-Serial: ING001
-Marca: Dell
-Tamaño: 16.0
-Precio: 78000.0
+Sistema operativo: Windows 10
+Procesador: AMD Ryzen
+Precio: 1800000.0
 Prestado: false
 ---------------------------------------

@@ -4,23 +4,30 @@ public class ComputadorPortatil {
     private String serial;
     private String marca;
     private float tamano;
+    private String so;
+    private String procesador;
     private float precio;
     private boolean prestado;
     private static int contadorIngenieria = 1;
 
-    public ComputadorPortatil(String marca, float tamano, float precio) {
+    // Constructor para crear pórtatil que se ingrese por entrada de usuario
+    public ComputadorPortatil(String marca, float tamano, String so, String procesador, float precio) {
         this.serial = generarSerialIngenieria();
         this.marca = validarCadena(marca, "Marca");
         this.tamano = tamano;
+        this.so = so;
+        this.procesador = procesador;
         this.precio = precio;
         this.prestado = false;  // Por defecto, no está prestado
     }
 
     // Constructor para Importar lista como un archivo
-    public ComputadorPortatil(String serial, String marca, float tamano, float precio, boolean prestado){
+    public ComputadorPortatil(String serial, String marca, float tamano, String so, String procesador, float precio, boolean prestado){
         this.serial = serial;
         this.marca = marca;
         this.tamano = tamano;
+        this.so = so;
+        this.procesador = procesador;
         this.precio = precio;
         this.prestado = prestado;
     }
@@ -42,8 +49,11 @@ public class ComputadorPortatil {
     public String getSerial() { return serial; }
     public String getMarca() {return marca; }
     public float getTamano() {return tamano; }
+    public String getSO() {return so; }
+    public String getProcesador() {return procesador; }
     public float getPrecio() {return precio; }
     public boolean isPrestado() { return prestado; } // Getter de Prestado
-    public void setPrestado(boolean prestado) { this.prestado = prestado; }
+
+    public void setPrestado(boolean prestado) { this.prestado = prestado; } // Setter de prestado
 }
 

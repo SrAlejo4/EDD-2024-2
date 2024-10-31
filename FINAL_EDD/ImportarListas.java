@@ -15,6 +15,8 @@ public class ImportarListas {
             String serial = "";
             String marca = "";
             float tamano = 0.0f;
+            String so = "";
+            String procesador = "";
             float precio = 0.0f;
             boolean prestado = false;
 
@@ -27,27 +29,33 @@ public class ImportarListas {
                     marca = line.substring(7).trim(); // Captura la Marca
                 } else if (line.startsWith("Tamaño: ")) {
                     tamano = Float.parseFloat(line.substring(8).trim()); // Captura el Tamaño
-                } else if (line.startsWith("Precio: ")) {
-                    precio = Float.parseFloat(line.substring(8).trim()); // Captura el color
+                } else if (line.startsWith("Sistema operativo: ")){
+                    so = line.substring(19).trim(); // Captura el Sistema Operativo
+                } else if(line.startsWith("Procesador: ")){
+                    procesador = line.substring(12).trim(); // Captura el Procesador
+                }else if (line.startsWith("Precio: ")) {
+                    precio = Float.parseFloat(line.substring(8).trim()); // Captura el Precio
                 } else if (line.startsWith("Prestado: ")) {
                     prestado = Boolean.parseBoolean(line.substring(10).trim()); // Captura el valor (TRUE/FALSE) de la variable prestado ...
                 }
 
                 if(line.isEmpty() || line.startsWith("---------------------------------------")){
-                    ComputadorPortatil portatil = new ComputadorPortatil(serial, marca, tamano, precio, prestado);
+                    ComputadorPortatil portatil = new ComputadorPortatil(serial, marca, tamano, so, procesador, precio, prestado);
                     listaPortatiles.add(portatil);
 
                     // Reiniciar variables para el siguiente computador
                     serial = "";
                     marca = "";
                     tamano = 0.0f;
+                    so = "";
+                    procesador = "";
                     precio = 0.0f;
                     prestado = false;
                 }
             }
 
             if (!serial.isEmpty()) {
-                ComputadorPortatil portatil = new ComputadorPortatil(serial, marca, tamano, precio, prestado);
+                ComputadorPortatil portatil = new ComputadorPortatil(serial, marca, tamano, so, procesador, precio, prestado);
                 listaPortatiles.add(portatil);    
             }
 
