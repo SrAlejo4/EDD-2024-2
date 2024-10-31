@@ -296,22 +296,22 @@ public class SubMenu {
             System.out.println("4. Buscar equipo (Por serial o cédula)");
             System.out.println("5. Volver al menú principal");
             opcion = inventario.leerOpcion(sc);
-            int cantInv = inventario.mostrarTablet();
 
             switch (opcion) {
                 case 1:
-                    if (cantInv > 0) {
-                        inventario.mostrarTablet(); // Mostrar portátiles disponibles antes de registrar
+                    if (inventario.mostrarTablet() > 0) {
                         System.out.println("Ingrese cédula del estudiante:");
                         String cedula = sc.next();
                         System.out.println("Ingrese serial del equipo a prestar:");
                         String serial = sc.next();
                         inventario.registrarPrestamoDiseno(cedula, serial);
+                    }else{
+                    System.out.println("\nNo existen tabletas en el inventario.");
                     }
                     break;
 
                 case 2:
-                    inventario.mostrarPortatiles(); // Mostrar portátiles antes de modificar
+                    inventario.mostrarTablet(); // Mostrar tabletas antes de modificar
                     System.out.println("Ingrese cédula o serial del equipo a modificar:");
                     String identificador = sc.next();
                     System.out.println("Ingrese nuevo serial del equipo:");
@@ -354,6 +354,7 @@ public class SubMenu {
             switch (opcion) {
                 case 1:
                     System.out.println("Archivo exportado con éxito.");
+                    exportar.exportarEstudiantesIngenieria(inventario.getEstudiantesIngenieria());
                     break;
                 case 2:
                     System.out.println("Archivo exportado con éxito.");

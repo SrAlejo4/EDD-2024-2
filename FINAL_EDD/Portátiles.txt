@@ -1,0 +1,8 @@
+Serial: ING001
+Marca: Dell
+Tamaño: 16.0
+Sistema operativo: Windows 11
+Procesador: Intel® Core™ i5
+Precio: 2500000.0
+Prestado: false
+---------------------------------------

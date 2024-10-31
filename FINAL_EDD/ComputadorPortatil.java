@@ -10,7 +10,7 @@ public class ComputadorPortatil {
     private String procesador;
     private float precio;
     private boolean prestado;
-    private int contadorIngenieria = 1;
+    private static int contadorIngenieria = 1;
 
     // Constructor vacío
     public ComputadorPortatil(){}

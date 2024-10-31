@@ -1,0 +1,7 @@
+Cedula: 1013337950
+Nombre: alejandro
+Apellido: garcia
+Teléfono: 3015305600
+Semestre actual: 4
+Promedio acumulado: 4.3
+---------------------------------------
