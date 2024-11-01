@@ -1,0 +1,8 @@
+Serial: DIS001
+Marca: Samsung
+Almacenamiento: 512 GB
+Tamaño: 12.0
+Peso: 4.5
+Precio: 800000.0
+Prestado: false
+---------------------------------------

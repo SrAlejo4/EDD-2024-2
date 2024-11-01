@@ -9,8 +9,10 @@ public class Main {
 
         // Importamos archivos de listas para persistencia de datos
         ImportarListas importarArchivos = new ImportarListas();
-        inventario.setComputadores(importarArchivos.importarPortatiles(inventario.getComputadoresPortatiles()));
         inventario.setEstudiantesIngenieria(importarArchivos.importarEstudiantesIngenieria(inventario.getEstudiantesIngenieria()));
+        inventario.setEstudiantesDiseno(importarArchivos.importarEstudiantesDiseno(inventario.getEstudiantesDiseno()));
+        inventario.setComputadores(importarArchivos.importarPortatiles(inventario.getComputadoresPortatiles()));
+        inventario.setTabletas(importarArchivos.importarTabletas(inventario.getTabletaGraficas()));
 
         do {
             System.out.println("==== MENÚ PRINCIPAL ====");
@@ -18,7 +20,7 @@ public class Main {
             System.out.println("2. Gestión de Estudiantes de Ingeniería");
             System.out.println("3. Gestión de Estudiantes de Diseño");
             System.out.println("4. Imprimir Inventario");
-            System.out.println("5. Exportar archivo de Listas");
+            System.out.println("5. Guardar información (Exportar Listas)");
             System.out.println("6. Salir");
             System.out.println("=========================");
             opcion = inventario.leerOpcion(sc);
@@ -37,7 +39,8 @@ public class Main {
                     inventario.imprimirInventario();
                     break;
                 case 5:
-                    sub_menu.menuExportarArchivos(inventario);
+                    sub_menu.ExportarArchivos(inventario);
+                    break;
                 case 6:
                     System.out.println("Saliendo del programa...");
                     break;

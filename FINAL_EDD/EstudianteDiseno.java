@@ -17,7 +17,7 @@ public class EstudianteDiseno extends Persona {
     //Constructor para crear EstudianteDiseno si tiene equipo prestado
     public EstudianteDiseno(String serial, String cedula, String nombre, String apellido, String telefono, String modalidadEstudio, int cantidadAsignaturas){
         super(serial, cedula, nombre, apellido, telefono);
-        this.modalidadEstudio = validarModalidad(modalidadEstudio);
+        this.modalidadEstudio = modalidadEstudio;
         this.cantidadAsignaturas = cantidadAsignaturas;
     }
 

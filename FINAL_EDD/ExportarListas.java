@@ -70,4 +70,25 @@ public class ExportarListas {
             }
         }
     }
+
+    public void exportarTabletas(ArrayList<TabletaGrafica> listaTabletas) {
+        if (listaTabletas.isEmpty()) {
+            System.out.println("No se puede exportar. Lista de Tabletas Gráficas vacía.");
+        } else {
+            try (FileWriter escriba = new FileWriter("Tabletas.txt")) {
+                for (TabletaGrafica tab : listaTabletas) {
+                    escriba.write("Serial: " + tab.getSerial() + "\n");
+                    escriba.write("Marca: " + tab.getMarca() + "\n");
+                    escriba.write("Almacenamiento: " + tab.getAlmacenamiento() + "\n");
+                    escriba.write("Tamaño: " + tab.getTamano() + "\n");
+                    escriba.write("Peso: " + tab.getPeso() + "\n");
+                    escriba.write("Precio: " + tab.getPrecio() + "\n");
+                    escriba.write("Prestado: " + tab.isPrestado() + "\n");
+                    escriba.write("---------------------------------------\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

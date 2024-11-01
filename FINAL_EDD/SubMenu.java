@@ -337,40 +337,12 @@ public class SubMenu {
         } while (opcion != 5);
     }
 
-    public void menuExportarArchivos(Inventario inventario){
-        do {
-            System.out.println("=== EXPORTAR ARCHIVOS DE LISTAS ===");
-            System.out.println("1. Exportar lista Estudiantes de Ingeniería");
-            System.out.println("2. Exportar lista Estudiantes de Diseño");
-            System.out.println("3. Exportar lista Computadores Portátiles");
-            System.out.println("4. Exportar lista Tabletas gráficas");
-            System.out.println("5. Volver al menú principal");
-            opcion = inventario.leerOpcion(sc);
-
-            switch (opcion) {
-                case 1:
-                    System.out.println("Archivo exportado con éxito.");
-                    exportar.exportarEstudiantesIngenieria(inventario.getEstudiantesIngenieria());
-                    break;
-                case 2:
-                    System.out.println("Archivo exportado con éxito.");
-                    exportar.exportarEstudiantesDiseno(inventario.getEstudiantesDiseno());
-                    break;
-                case 3:
-                    System.out.println("Archivo exportado con éxito.");
-                    exportar.exportarComputadores(inventario.getComputadoresPortatiles());
-                    break;
-                case 4:
-                    System.out.println("Archivo exportado con éxito.");
-                    break;
-                case 5:
-                    System.out.println("Volviendo al menú principal...");
-                    break;
-                default:
-                    System.out.println("Opción inválida.");
-                    break;
-            }
-        }
-        while (opcion != 5);
+    public void ExportarArchivos(Inventario inventario){
+        exportar.exportarEstudiantesIngenieria(inventario.getEstudiantesIngenieria());
+        exportar.exportarEstudiantesDiseno(inventario.getEstudiantesDiseno());
+        exportar.exportarComputadores(inventario.getComputadoresPortatiles()); 
+        exportar.exportarTabletas(inventario.getTabletaGraficas());
+        System.out.println("Información guardada y exportada con éxito");         
     }
 }
+
