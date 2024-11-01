@@ -1,7 +1,15 @@
+Serial: ING002
 Cedula: 1013337950
-Nombre: alejandri
-Apellido: garcuia
+Nombre: alejandro
+Apellido: garcia
 Teléfono: 3015305600
 Semestre actual: 4
 Promedio acumulado: 4.5
+---------------------------------------
+Cedula: 71722939
+Nombre: carlos
+Apellido: gomez
+Teléfono: 3206149912
+Semestre actual: 6
+Promedio acumulado: 3.8
 ---------------------------------------

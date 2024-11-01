@@ -4,10 +4,70 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ImportarListas {
-    // Método para importar archivo de portátiles
-    Inventario inventario = new Inventario(); // Instancio objeto de clase Inventario para acceder a las listas ...
-    ComputadorPortatil metodosPortatil = new ComputadorPortatil(); // Instancia para llamar métodos de computador portátil ...
+
+    // Método para importar archivo de Estudiantes de INGENIERÍA ...
+    public ArrayList<EstudianteIngenieria> importarEstudiantesIngenieria(ArrayList<EstudianteIngenieria> listaEstudiantesIngenieria){
+        String rutaArchivo = "EstudiantesIngeniería.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String line;
+            String serial = "";
+            String cedula = "";
+            String nombre = "";
+            String apellido = "";
+            String telefono = "";
+            int semestreActual = 0;
+            float promedioAcumulado = 0.0f;
+
+            while ((line = br.readLine()) != null) {
+                // Procesar cada campo
+                if(line.startsWith("Serial: ")){
+                    serial = line.substring(8).trim(); // Captura el Serial (EN CASO DE QUE TENGA EQUIPO PRESTADO)
+                }else if (line.startsWith("Cedula: ")) {
+                    cedula = line.substring(8).trim(); // Captura la cedula
+                } else if (line.startsWith("Nombre: ")) {
+                    nombre = line.substring(8).trim(); // Captura el Nombre
+                } else if (line.startsWith("Apellido: ")) {
+                    apellido = line.substring(10).trim(); // Captura el Apellido
+                } else if (line.startsWith("Teléfono: ")){
+                    telefono = line.substring(10).trim(); // Captura el Teléfono
+                } else if(line.startsWith("Semestre actual: ")){
+                    semestreActual = Integer.parseInt(line.substring(17).trim()); // Captura el Semestre actual
+                }else if (line.startsWith("Promedio acumulado: ")) {
+                    promedioAcumulado = Float.parseFloat(line.substring(20).trim()); // Captura el Promedio Acumulado
+                }
+
+                if(line.isEmpty() || line.startsWith("---------------------------------------")){
+                    if(!serial.equals("")){
+                        EstudianteIngenieria estIng = new EstudianteIngenieria(serial, cedula, nombre, apellido, telefono, semestreActual, promedioAcumulado);
+                        listaEstudiantesIngenieria.add(estIng);
+                    }else{
+                        EstudianteIngenieria estIng = new EstudianteIngenieria(cedula, nombre, apellido, telefono, semestreActual, promedioAcumulado);
+                        listaEstudiantesIngenieria.add(estIng);
+                    }
+
+                    // Reiniciar variables para el siguiente computador
+                    serial = "";
+                    cedula = "";
+                    nombre = "";
+                    apellido = "";
+                    telefono = "";
+                    semestreActual = 0;
+                    promedioAcumulado = 0.0f;
+                }
+            }
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        catch (NumberFormatException e){
+            System.out.println("Error de formato numérico: " + e.getMessage());
+        }
+
+        return listaEstudiantesIngenieria;
+    }
     
+    // Método para importar archivo de portátiles
     public ArrayList<ComputadorPortatil> importarPortatiles(ArrayList<ComputadorPortatil> listaPortatiles){
         String rutaArchivo = "Portátiles.txt";
 
@@ -53,11 +113,6 @@ public class ImportarListas {
                     precio = 0.0f;
                     prestado = false;
                 }
-            }
-
-            if (!serial.isEmpty()) {
-                ComputadorPortatil portatil = new ComputadorPortatil(serial, marca, tamano, so, procesador, precio, prestado);
-                listaPortatiles.add(portatil);    
             }
 
         }catch (IOException e){

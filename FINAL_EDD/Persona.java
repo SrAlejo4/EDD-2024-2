@@ -6,7 +6,20 @@ public abstract class Persona { // Con abstract se declara una clase que no se p
     protected String apellido;
     protected String telefono;
     protected String serial;  // Serial del equipo prestado
+    
+    // Constructor vacío de Persona ...
+    public Persona(){}
 
+    // Constructor en caso de que tenga equipo prestado para importar archivo de lista
+    public Persona(String serial, String cedula, String nombre, String apellido, String telefono){
+        this.serial = serial;
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+    }
+
+    // Constructor para crear por entrada de usuario
     public Persona(String cedula, String nombre, String apellido, String telefono) {
         this.cedula = validarCed(cedula, "Cédula");
         this.nombre = validarCadena(nombre, "Nombre");
@@ -41,8 +54,11 @@ public abstract class Persona { // Con abstract se declara una clase que no se p
     }
 
     // Métodos getter y setter
-    public String getCedula() { return cedula; }
     public String getSerial() { return serial; }
+    public String getCedula() {return cedula ;}
+    public String getNombre() {return nombre ;}
+    public String getApellido() {return apellido ;}
+    public String getTelefono() {return telefono ;}
     public void setSerial(String serial) { this.serial = serial; }
 }
 

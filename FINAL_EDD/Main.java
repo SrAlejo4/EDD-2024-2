@@ -7,8 +7,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int opcion;
 
+        // Importamos archivos de listas para persistencia de datos
         ImportarListas importarArchivos = new ImportarListas();
         inventario.setComputadores(importarArchivos.importarPortatiles(inventario.getComputadoresPortatiles()));
+        inventario.setEstudiantesIngenieria(importarArchivos.importarEstudiantesIngenieria(inventario.getEstudiantesIngenieria()));
 
         do {
             System.out.println("==== MENÚ PRINCIPAL ====");

@@ -1,0 +1,14 @@
+Cedula: 98564321
+Nombre: octavio
+Apellido: mesa
+Teléfono: 3568974521
+Modalidad de estudio: virtual
+Cantidad de asignaturas: 5
+---------------------------------------
+Cedula: 1020568974
+Nombre: jhonatan
+Apellido: castillo
+Teléfono: 3054587986
+Modalidad de estudio: virtual
+Cantidad de asignaturas: 6
+---------------------------------------

@@ -8,25 +8,15 @@ public class Inventario {
     private ArrayList<TabletaGrafica> tabletas = new ArrayList<>();
 
     // Getters de las listas
-    public ArrayList<EstudianteIngenieria> getEstudiantesIngenieria() {
-        return estudiantesIngenieria;
-    }
-
-    public ArrayList<EstudianteDiseno> getEstudiantesDiseno() {
-        return estudiantesDiseno;
-    }
-
-    public ArrayList<ComputadorPortatil> getComputadoresPortatiles() {
-        return computadores;
-    }
-
-    public ArrayList<TabletaGrafica> getTabletaGraficas() {
-        return tabletas;
-    }
-
-    public void setComputadores(ArrayList<ComputadorPortatil> computadores) {
-        this.computadores = computadores;
-    }
+    public ArrayList<EstudianteIngenieria> getEstudiantesIngenieria()  {return estudiantesIngenieria;}
+    public ArrayList<EstudianteDiseno> getEstudiantesDiseno() { return estudiantesDiseno;}
+    public ArrayList<ComputadorPortatil> getComputadoresPortatiles() { return computadores;}
+    public ArrayList<TabletaGrafica> getTabletaGraficas() { return tabletas;}
+    // Setters de la listas
+    public void setEstudiantesIngenieria(ArrayList<EstudianteIngenieria> estudiantesIngenieria) {this.estudiantesIngenieria = estudiantesIngenieria; }
+    public void setEstudiantesDiseno(ArrayList<EstudianteDiseno> estudiantesDiseno) {this.estudiantesDiseno = estudiantesDiseno; }
+    public void setComputadores(ArrayList<ComputadorPortatil> computadores) {this.computadores = computadores; }
+    public void setTabletas(ArrayList<TabletaGrafica> tabletas) {this.tabletas = tabletas; }
 
     // Registrar préstamo para estudiantes de Ingeniería
     public void registrarPrestamoIngenieria(String cedula, String serialEquipo) {
@@ -37,10 +27,10 @@ public class Inventario {
                         estudiante.setSerial(serialEquipo);
                         comp.setPrestado(true);
                         System.out.println("Préstamo registrado correctamente.");
-                    } else {
-                        System.out.println("Préstamo NO registrado correctamente.");
+                        return;
                     }
                 }
+                System.out.println("Préstamo NO registrado correctamente.");
                 return;
             }
         }
@@ -57,10 +47,9 @@ public class Inventario {
                         tableta.setPrestado(true);
                         System.out.println("Préstamo registrado correctamente.");
                         return;
-                    } else {
-                        System.out.println("Préstamo NO registrado correctamente.");
                     }
                 }
+                System.out.println("Préstamo NO registrado correctamente.");
                 return;
             }
         }

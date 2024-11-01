@@ -10,12 +10,38 @@ public class ExportarListas {
         } else {
             try (FileWriter escriba = new FileWriter("EstudiantesIngeniería.txt")) {
                 for (EstudianteIngenieria estIng : listaEstudiantesIngenieria) {
+                    if(!estIng.getSerial().equals("")){
+                        escriba.write("Serial: " + estIng.getSerial() + "\n");
+                    }
                     escriba.write("Cedula: " + estIng.getCedula() + "\n");
                     escriba.write("Nombre: " + estIng.getNombre() + "\n");
                     escriba.write("Apellido: " + estIng.getApellido() + "\n");
                     escriba.write("Teléfono: " + estIng.getTelefono() + "\n");
                     escriba.write("Semestre actual: " + estIng.getSemestreActual() + "\n");
                     escriba.write("Promedio acumulado: " + estIng.getPromedioAcumulado() + "\n");
+                    escriba.write("---------------------------------------\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void exportarEstudiantesDiseno(ArrayList<EstudianteDiseno> listaEstudiantesDiseno){
+        if (listaEstudiantesDiseno.isEmpty()) {
+            System.out.println("No se puede exportar. Lista de Estudiantes Diseño vacía.");
+        } else {
+            try (FileWriter escriba = new FileWriter("EstudiantesDiseño.txt")) {
+                for (EstudianteDiseno estDis : listaEstudiantesDiseno) {
+                    if(!estDis.getSerial().equals("")){
+                        escriba.write("Serial: " + estDis.getSerial() + "\n");
+                    }
+                    escriba.write("Cedula: " + estDis.getCedula() + "\n");
+                    escriba.write("Nombre: " + estDis.getNombre() + "\n");
+                    escriba.write("Apellido: " + estDis.getApellido() + "\n");
+                    escriba.write("Teléfono: " + estDis.getTelefono() + "\n");
+                    escriba.write("Modalidad de estudio: " + estDis.getModalidadEstudio() + "\n");
+                    escriba.write("Cantidad de asignaturas: " + estDis.getCantidadAsignaturas() + "\n");
                     escriba.write("---------------------------------------\n");
                 }
             } catch (IOException e) {

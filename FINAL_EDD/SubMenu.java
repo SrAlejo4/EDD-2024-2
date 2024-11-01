@@ -354,6 +354,7 @@ public class SubMenu {
                     break;
                 case 2:
                     System.out.println("Archivo exportado con éxito.");
+                    exportar.exportarEstudiantesDiseno(inventario.getEstudiantesDiseno());
                     break;
                 case 3:
                     System.out.println("Archivo exportado con éxito.");
