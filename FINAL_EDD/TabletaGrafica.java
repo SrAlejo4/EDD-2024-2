@@ -43,7 +43,7 @@ public class TabletaGrafica {
         return input;
     }
     private String generarSerialDiseno() {
-        String serialGenerado = String.format("DIS%03d", contadorDiseno);
+        String serialGenerado = String.format("DIS%03d", (contadorDiseno + 1));
         contadorDiseno++;
         return serialGenerado;
     }
@@ -55,10 +55,12 @@ public class TabletaGrafica {
     public float getPeso() { return peso; }
     public float getPrecio() { return precio; }
     public boolean isPrestado() { return prestado; }
+    public int contadorDiseno() {return contadorDiseno; }
 
     // Setters
     public void setPrestado(boolean prestado) { this.prestado = prestado; }
     public void setSerial(String serial) {this.serial = serial; }
+    public void setContadorDiseno(int contadorDiseno) {this.contadorDiseno = contadorDiseno; }
 }
 
 

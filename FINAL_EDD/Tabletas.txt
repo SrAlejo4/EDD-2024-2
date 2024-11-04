@@ -1,8 +1,32 @@
 Serial: DIS001
 Marca: Samsung
 Almacenamiento: 512 GB
+Tamaño: 10.0
+Peso: 6.7
+Precio: 9000000.0
+Prestado: false
+---------------------------------------
+Serial: DIS002
+Marca: Lenovo
+Almacenamiento: 256 GB
+Tamaño: 10.0
+Peso: 10.0
+Precio: 500000.0
+Prestado: false
+---------------------------------------
+Serial: DIS003
+Marca: Samsung
+Almacenamiento: 256 GB
 Tamaño: 12.0
-Peso: 4.5
-Precio: 800000.0
+Peso: 5.0
+Precio: 1.02E7
+Prestado: false
+---------------------------------------
+Serial: DIS004
+Marca: Lenovo
+Almacenamiento: 256 GB
+Tamaño: 12.0
+Peso: 10.0
+Precio: 580000.0
 Prestado: false
 ---------------------------------------

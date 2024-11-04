@@ -91,4 +91,13 @@ public class ExportarListas {
             }
         }
     }
+
+    public void exportarSeriales(ComputadorPortatil com, TabletaGrafica tab){
+        try (FileWriter escriba = new FileWriter("Seriales.txt")) {
+            escriba.write("Contador Ingenieria: " + com.getContadorIngenieria() + "\n");
+            escriba.write("Contador Diseño: " + tab.contadorDiseno() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

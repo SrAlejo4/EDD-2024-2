@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Inventario inventario = new Inventario();
+        ComputadorPortatil computador = new ComputadorPortatil();
+        TabletaGrafica tableta = new TabletaGrafica();
         SubMenu sub_menu = new SubMenu();
         Scanner sc = new Scanner(System.in);
         int opcion;
@@ -13,6 +15,9 @@ public class Main {
         inventario.setEstudiantesDiseno(importarArchivos.importarEstudiantesDiseno(inventario.getEstudiantesDiseno()));
         inventario.setComputadores(importarArchivos.importarPortatiles(inventario.getComputadoresPortatiles()));
         inventario.setTabletas(importarArchivos.importarTabletas(inventario.getTabletaGraficas()));
+        computador.setContadorIngenieria(importarArchivos.importarSerialIngenieria());
+        tableta.setContadorDiseno(importarArchivos.importarSerialDiseno());
+        
 
         do {
             System.out.println("==== MENÚ PRINCIPAL ====");

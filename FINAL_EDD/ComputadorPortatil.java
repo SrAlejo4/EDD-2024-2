@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class ComputadorPortatil {
-    Inventario inventario = new Inventario();
 
     private String serial;
     private String marca;
@@ -44,8 +43,9 @@ public class ComputadorPortatil {
         }
         return input;
     }
+
     private String generarSerialIngenieria() {
-        String serialGenerado = String.format("ING%03d", contadorIngenieria);
+        String serialGenerado = String.format("ING%03d", (contadorIngenieria + 1));
         contadorIngenieria++;
         return serialGenerado;
     }
@@ -58,8 +58,10 @@ public class ComputadorPortatil {
     public String getProcesador() {return procesador; }
     public float getPrecio() {return precio; }
     public boolean isPrestado() { return prestado; } // Getter de Prestado
+    public int getContadorIngenieria() { return contadorIngenieria; }
 
     public void setPrestado(boolean prestado) { this.prestado = prestado; } // Setter de prestado
     public void setSerial (String serial) {this.serial = serial; }
+    public void setContadorIngenieria (int contadorIngenieria) {this.contadorIngenieria = contadorIngenieria; }
 }
 

@@ -246,6 +246,52 @@ public class ImportarListas {
         return listaTabletas;
     }
 
+    // Métodos para importar contadores de seriales
+    public int importarSerialIngenieria(){
+        String rutaArchivo = "Seriales.txt";
+        int contadorIngenieria = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                // Procesar cada campo
+                if (line.startsWith("Contador Ingenieria: ")) {
+                    contadorIngenieria = Integer.parseInt(line.substring(21).trim());
+                }
+            }
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        catch (NumberFormatException e){
+            System.out.println("Error de formato numérico: " + e.getMessage());
+        }
+        return contadorIngenieria;
+    }
+
+    public int importarSerialDiseno(){
+        String rutaArchivo = "Seriales.txt";
+        int contadorDiseno = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                // Procesar cada campo
+                if (line.startsWith("Contador Diseño: ")) {
+                    contadorDiseno = Integer.parseInt(line.substring(17).trim());
+                }
+            }
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        catch (NumberFormatException e){
+            System.out.println("Error de formato numérico: " + e.getMessage());
+        }
+        return contadorDiseno;
+    }
 }
             
         

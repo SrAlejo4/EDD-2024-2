@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class SubMenu {
     Inventario inventario = new Inventario();
     ExportarListas exportar = new ExportarListas();
+    ComputadorPortatil computador = new ComputadorPortatil();
+    TabletaGrafica tableta = new TabletaGrafica();
     Scanner sc = new Scanner(System.in);
     int opcion;
 
@@ -342,6 +344,7 @@ public class SubMenu {
         exportar.exportarEstudiantesDiseno(inventario.getEstudiantesDiseno());
         exportar.exportarComputadores(inventario.getComputadoresPortatiles()); 
         exportar.exportarTabletas(inventario.getTabletaGraficas());
+        exportar.exportarSeriales(computador, tableta);
         System.out.println("Información guardada y exportada con éxito");         
     }
 }

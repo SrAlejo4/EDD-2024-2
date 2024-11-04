@@ -5,3 +5,10 @@ Teléfono: 3015305600
 Semestre actual: 4
 Promedio acumulado: 4.5
 ---------------------------------------
+Cedula: 43870330
+Nombre: eli
+Apellido: sanchez
+Teléfono: 3206149912
+Semestre actual: 7
+Promedio acumulado: 7.8
+---------------------------------------

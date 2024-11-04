@@ -12,6 +12,7 @@ public class Inventario {
     public ArrayList<EstudianteDiseno> getEstudiantesDiseno() { return estudiantesDiseno;}
     public ArrayList<ComputadorPortatil> getComputadoresPortatiles() { return computadores;}
     public ArrayList<TabletaGrafica> getTabletaGraficas() { return tabletas;}
+
     // Setters de la listas
     public void setEstudiantesIngenieria(ArrayList<EstudianteIngenieria> estudiantesIngenieria) {this.estudiantesIngenieria = estudiantesIngenieria; }
     public void setEstudiantesDiseno(ArrayList<EstudianteDiseno> estudiantesDiseno) {this.estudiantesDiseno = estudiantesDiseno; }
@@ -332,6 +333,7 @@ public class Inventario {
 
         return checkedPrecio;
     }
+
     // Métodos para agregar estudiantes y equipos
     public void agregarEstudianteIngenieria(EstudianteIngenieria estudiante) {
         estudiantesIngenieria.add(estudiante);
