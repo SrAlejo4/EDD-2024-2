@@ -2,7 +2,7 @@ import java.util.Stack;
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class PilaFibonacci{
+public class PilaFibonacci {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.print("\nIngrese el tamaño de la pila: ");
@@ -17,28 +17,30 @@ public class PilaFibonacci{
         System.out.println("\n\nPila ordenada: \n" + pilaOrdenada);
 
         int opcion;
-        do{
+        do {
             System.out.print("\nIngrese un elemento a eliminar: ");
             int elemento = entrada.nextInt();
             System.out.print("\nPila ordenada: \n" + buscarElemento(pilaOrdenada, elemento));
             System.out.print("\n¿Desea seguir eliminando elementos? (1. Si)(2. No): ");
             opcion = entrada.nextInt();
-        }while(opcion == 1);
+        } while (opcion == 1 && !pilaOrdenada.isEmpty()); 
+        System.out.println("\n----------- FIN PROGRAMA ----------- \n");
     }
 
-    // Método que genera una pila copn números aleatorios de tamaño ingresado por el usuario ...
-    public static Stack<Integer> generarPila(int tam){
+    // Método que genera una pila copn números aleatorios de tamaño ingresado por el
+    // usuario ...
+    public static Stack<Integer> generarPila(int tam) {
         Stack<Integer> pilaGenerada = new Stack<>();
 
         for (int i = 0; i < tam; i++) {
-            pilaGenerada.push( (int) (Math.random()*50+1) );
+            pilaGenerada.push((int) (Math.random() * 50 + 1));
         }
 
         return pilaGenerada;
     }
 
     // Método para generar secuencia Fibonacci ...
-    public static void generarFibonacci(Stack<Integer> pila){
+    public static void generarFibonacci(Stack<Integer> pila) {
         Stack<Integer> copiaPila = new Stack<>();
         copiaPila.addAll(pila); // Se crea una copia de la pila para no vaciar la pila original ...
 
@@ -61,9 +63,9 @@ public class PilaFibonacci{
     }
 
     // Método para ordenar de manera ascendente una pila
-    public static Stack<Integer> ordenarPila(Stack<Integer> pila){
+    public static Stack<Integer> ordenarPila(Stack<Integer> pila) {
         int tam = pila.size();
-        int [] arreglo = new int[tam];
+        int[] arreglo = new int[tam];
 
         for (int i = 0; i < tam; i++) {
             arreglo[i] = pila.pop();
@@ -83,24 +85,24 @@ public class PilaFibonacci{
         Stack<Integer> aux = new Stack<>();
         boolean encontrado = false;
 
-        if(!pila.isEmpty())
-        {
-            while(!encontrado){
-                aux.push(pila.pop());      
-                if(aux.peek() == elemento){
-                    aux.pop();
-                    encontrado = true;
-                }
+        if(!pila.isEmpty()){
+            
+        while(!encontrado && !pila.isEmpty()){
+            aux.push(pila.pop());      
+            if(aux.peek() == elemento){
+                aux.pop();
+                encontrado = true;
             }
+        }  
+
+        if(encontrado == false){
+            System.out.println("No se encontró el elemento ingresado en la PILA ...");
+        }
+            
+        while(!aux.isEmpty()){
+        pila.push(aux.pop());
+        }
         
-            while(!aux.isEmpty()){
-                pila.push(aux.pop());
-            }
-
-            if(!encontrado){
-                System.out.println("No se encontró el elemento ingresado en la PILA ...");
-            }
-
         }else{
             System.out.println("La pila está vacía");
         }
